@@ -41,12 +41,17 @@ Die Koeffizienten der Ableitung $c'_j$ lassen sich direkt aus den Koeffizienten 
 $$c'_{j} = c'_{j+2} + 2 \cdot (j+1) \cdot c_{j+1} \quad \text{für } j = N-2, N-3, \dots, 1$$ 
 Für den nullten Koeffizienten gilt: $c'_0 = 0.5 \cdot c'_2 + c_1$. Da die Ableitung auf dem Intervall $[-1,1]$ berechnet wurde, muss sie mit der inneren Ableitung der Intervall-Transformation skaliert werden:
 $$\text{scale} = \frac{2}{b-a} \quad \Longrightarrow \quad c'_j \leftarrow c'_j \cdot \text{scale}$$ 
-## 2.5 Analytisches Integral / Stammfunktion (integrate)
+## 2.5 Analytisches Integral / Stammfunktion (`integrate`)
 Die Koeffizienten des Integrals $C_j$ werden über eine Vorwärts-Beziehung bestimmt. Sie verhalten sich antiproportional zur Frequenz $j$:
-$$C_j = \frac{c_{j-1} - c_{j+1}}{2j} \quad \text{für } j = 1, 2, \dots, N-2$$ 
-Spezialfälle für die Ränder: $C_{N-1} = \frac{c_{N-2}}{2(N-1)}$. Der Koeffizient $C_0$ wird so gewählt, dass die Bedingung $F(a) = 0$ (Nullpunkt am linken Intervallrand) erfüllt ist. Hierzu wird das Polynom mittels Clenshaw an der Stelle $x = a$ (entspricht $y = -1$) ausgewertet. Die Abweichung wird von $C_0$ subtrahiert.
+
+$$C_j = \frac{c_{j-1} - c_{j+1}}{2j} \quad \text{für } j = 1, 2, \dots, N-2$$
+
+Spezialfälle für die Ränder: $C_{N-1} = \frac{c_{N-2}}{2(N-1)}$. Der Koeffizient $C_0$ wird so gewählt, dass die Bedingung $F(a) = 0$ (Nullpunkt am linken Intervallrand) erfüllt ist. Hierzu wird das Polynom mittels Clenshaw an der Stelle $x = a$ (entspricht $y = -1$) ausgewertet. Die Abweichung wird von $C_0$ subtrahiert. 
+
 Zusätzlich gilt auch hier die Skalierung der äußeren Transformation:
-$$\text{scale} = \frac{b-a}{2} \quad \Longrightarrow \quad C_j \leftarrow C_j \cdot \text{scale}$$ 
+
+$$\text{scale} = \frac{b-a}{2} \quad \Longrightarrow \quad C_j \leftarrow C_j \cdot \text{scale}$$
+
 ------------------------------
 ## 3. Literaturempfehlungen & Aktuelle Textbooks
 Für Neueinsteiger, die tiefer in die faszinierende Welt der orthogonalen Polynome und der spektralen Numerik eintauchen möchten, sind folgende Werke der Goldstandard:
