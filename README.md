@@ -1,8 +1,8 @@
 ## 📖 Documentation / Dokumentation
 
 For a deep dive into the mathematical formulations and implementation theory, check out our full documentation:
- _ **[English Comprehensive Guide (PDF-ready)](docs/documentation_en.md)**
- _ **[Deutsche Kurzerklärung (PDF-bereit)](docs/documentation_de.md)**
+ - **[English Comprehensive Guide (PDF-ready)](./docs/documentation_en.md)**
+ - **[Deutsche Kurzerklärung (PDF-bereit)](./docs/documentation_de.md)**
  
 # Fast_Chebyshev
 
