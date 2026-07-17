@@ -41,11 +41,17 @@ The coefficients of the exact analytical derivative $c'_j$ can be synthesized di
 $$c'_{j} = c'_{j+2} + 2 \cdot (j+1) \cdot c_{j+1} \quad \text{for } j = N-2, N-3, \dots, 1$$ 
 The boundary condition for the zero-th derivative coefficient is defined as: c'₀ = 0.5 ⋅ c'₂ + c₁. Because this derivative is calculated in the normalized $[-1,1]$ space, it must be scaled by the inner derivative of our physical domain transformation:
 $$\text{scale} = \frac{2}{b-a} \quad \Longrightarrow \quad c'_j \leftarrow c'_j \cdot \text{scale}$$ 
-## 2.5 Analytical Integral / Antiderivative Generation (integrate)
-The coefficients of the exact analytical integral $C_j$ are generated via a forward relationship. They scale inversely proportional to the frequency step j:
-$$C_j = \frac{c_{j-1} - c_{j+1}}{2j} \quad \text{for } j = 1, 2, \dots, N-2$$ 
-Boundary handling for the highest frequency is given by: $C_{N-1} = \frac{c_{N-2}}{2(N-1)}$. The constant of integration C₀ is dynamically shifted to guarantee the boundary condition F(a) = 0 (clamping the integral to zero at the left bound, which is mandatory for building precise Cumulative Distribution Functions). To achieve this, the integral polynomial is evaluated at x = a (where y = -1) via Clenshaw's recurrence, and the resulting offset is subtracted from C₀. Finally, the scaling factor of the transformation is applied:
-$$\text{scale} = \frac{b-a}{2} \quad \Longrightarrow \quad C_j \leftarrow C_j \cdot \text{scale}$$ 
+## 2.5 Analytical Integral / Antiderivative Generation (`integrate`)
+The coefficients of the exact analytical integral $C_j$ are generated via a forward relationship. They scale inversely proportional to the frequency step $j$:
+
+$$C_j = \frac{c_{j-1} - c_{j+1}}{2j} \quad \text{for } j = 1, 2, \dots, N-2$$
+
+Boundary handling for the highest frequency is given by: $C_{N-1} = \frac{c_{N-2}}{2(N-1)}$. The constant of integration $C_0$ is dynamically shifted to guarantee the boundary condition $F(a) = 0$ (clamping the integral to zero at the left bound, which is mandatory for building precise Cumulative Distribution Functions). 
+
+To achieve this, the integral polynomial is evaluated at $x = a$ (where $y = -1$) via Clenshaw's recurrence, and the resulting offset is subtracted from $C_0$. Finally, the scaling factor of the transformation is applied:
+
+$$\text{scale} = \frac{b-a}{2} \quad \Longrightarrow \quad C_j \leftarrow C_j \cdot \text{scale}$$
+
 ------------------------------
 ## 3. Recommended Textbooks & Academic Resources
 For newcomers looking to master spectral methods, orthogonal polynomials, and numerical approximation theory, these textbooks represent the international gold standard:
