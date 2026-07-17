@@ -1,8 +1,14 @@
-# fast-cheby
+## 📖 Documentation / Dokumentation
+
+For a deep dive into the mathematical formulations and implementation theory, check out our full documentation:
+* **[English Comprehensive Guide (PDF-ready)](docs/documentation_en.md)**
+* **[Deutsche Kurzerklärung (PDF-bereit)](docs/documentation_de.md)**
+* 
+# Fast_Chebyshev
 
 A blazing-fast, zero-overhead Chebyshev polynomial approximation toolchain written in pure Rust.
 
-Designed for high-performance computing, numerical simulations, and statistical modeling (such as ultra-fast CDF evaluations), `fast-cheby` features a compile-time optimized variant that completely eliminates heap allocations and fully leverages CPU instruction pipelines.
+Designed for high-performance computing, numerical simulations, and statistical modeling (such as ultra-fast CDF evaluations), `Fast_Chebyshev` features a compile-time optimized variant that completely eliminates heap allocations and fully leverages CPU instruction pipelines.
 
 ## 🚀 Key Features
 
@@ -24,13 +30,13 @@ Designed for high-performance computing, numerical simulations, and statistical 
 | **`OptimizedChebyshev<16>`** | Const Generics    | Stack (`[f64; 16]`) | **~19.4 ns**   |
 
 ### Why is it so fast?
-By baking the interval scaling factor directly into the Clenshaw coefficients during generation, `fast-cheby` avoids secondary array traversals. Combined with Rust's compile-time loop unrolling via Const Generics, data flows directly through the CPU's AVX registers without cache thrashing.
+By baking the interval scaling factor directly into the Clenshaw coefficients during generation, `Fast_Chebyshev` avoids secondary array traversals. Combined with Rust's compile-time loop unrolling via Const Generics, data flows directly through the CPU's AVX registers without cache thrashing.
 
 ---
 
 ## 🛠️ Usage
 
-Add `fast-cheby` to your local environment or include the source files into your architecture.
+Add `Fast_Chebyshev` to your local environment or include the source files into your architecture.
 
 ### 1. Function Approximation & Evaluation
 
